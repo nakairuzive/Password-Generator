@@ -4,12 +4,21 @@ body{
     display: flex;
     justify-content: center;
     align-items:center;
+    height: 95vh;
+    font-size: 16px;
 }
+
+:root{
+    --switch-height: 15px;
+    --switch-width: 40px;
+
+}
+
+/* ===== TYPOGRAPHY ===== */
 
 #container{
     width: 450px;
-    height: 350px;
-    background-color: #1F2937;
+    background-color: #1F2937; 
     padding: 40px 40px;
 }
 
@@ -30,6 +39,7 @@ body{
     font-weight: lighter;
 }
 
+/* ===== BUTTONS ===== */
 .btn-passwords{
     margin-top: 20px;
     margin-bottom: 10px;
@@ -37,19 +47,28 @@ body{
     background-color: #10B981;
     border: none;
     border-radius: 3px;
-    color: white;
+    color: white;    
+}
+.btn-red{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    border: none;
+    border-radius: 3px;
+    color: white;    
 }
 
-hr{
-    margin-top: 25px;
-}
+/* ===== PASSWORD CONTAINERS ===== */
 
 #password-container{
     display: flex;
     justify-content: space-between;
     margin-top: 25px;
+    border-top: 1px solid #b4b8bd;
 }
-#password1{
+
+.password-display{
     width: 211px;
     height: 39px;
     color: #55F991;
@@ -60,14 +79,47 @@ hr{
     justify-content: center;
 }
 
-#password2{
-    width: 211px;
-    height: 39px;
-    color: #55F991;
-    border-radius: 5px;
-    background-color: #273549;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+/* ===== SETTINGS FORM ===== */
+.form-popup{
+    display: none;
+    /* position: fixed;
+    bottom: 0;
+    right: 15px; */
+    border: 1px solid white;
+    padding: 1em;
+    background-color: white;
 }
+
+input[type = number]{
+    width: 4em;
+   
+}
+
+.toggle-input{
+    border: 1px solid black;
+    border-radius: 40px;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    padding: .25em;
+}
+
+input[type = "checkbox"]{
+    display: none;
+}
+
+.toggle-circle{
+    height: var(--switch-height);
+    width: var(--switch-height);
+    background-color: #10B981;
+    border-radius: 100%;
+}
+
+.toggle-input:checked ~ .toggle-circle{
+    transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+}
+
 

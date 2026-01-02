@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="EN">
     <head>
-        <title>Password Generator</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <title>Password Generator</title>
     </head>
 
     <body>
@@ -12,11 +13,32 @@
                 <h1 id="heading">Generate a</h1>
                 <h1 id="subheading">random password</h1>
                 <p id="supporting">Never use an insecure password again.</p>
+                <button class="btn-passwords" id="btn-settings">Settings</button>
+                <div class="form-popup" id="settings-menu">
+                    <form action="" class="form-container">
+                        <label for="password-lenght"> Password lenght</label>
+                        <input type="number" id="password-lenght">
+                        <br>
+                        <label for="symbols">Symbols</label>
+                        <label for="symbols" class="toggle-input">
+                            <input type="checkbox" id="symbols" class="toggle-input">
+                            <div class="toggle-circle"></div>
+                        </label>
+                        <br>
+                        <label for="numbers">Numbers</label>
+                        <label for="numbers" class="toggle-input">
+                            <input type="checkbox" id="numbers" class="toggle-input">
+                            <div class="toggle-circle"></div>
+                        </label>
+                        <button class="btn-red" id="btn-close">Close</button>
+                        <button class="btn-passwords" id="btn-settings-generate">Generate Passwords</button>
+                        
+                    </form>
+                </div>
                 <button class="btn-passwords" id="btn-generate">Generate Passwords</button>
-                <hr style="background-color: #2F3E53;">
                 <div id="password-container">
-                    <p id="password1"></p> 
-                    <p id="password2"></p>
+                    <p id="password1" class="password-display"></p> 
+                    <p id="password2" class="password-display"></p>
                 </div>
                 <button class="btn-passwords" id="btn-new">New Password</button>
             </div>
@@ -24,3 +46,4 @@
         <script src="index.js"></script>
     </body>
 </html>
+
