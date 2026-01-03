@@ -38,3 +38,5 @@ This project explores how you can create your own password generator.
 + Naming Conventions
 ## 🍿 Video 
 ![Demo](media/PasswordGenerator.gif)
+![](https://github.com/Password-Generator/PasswordGenerator.gif)
+
