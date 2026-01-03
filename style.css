@@ -9,18 +9,24 @@ body{
 }
 
 :root{
-    --switch-height: 15px;
-    --switch-width: 40px;
+    --switch-height: .5em;
+    --switch-width: 1.5em;
+    --bg-main: #1c1c1c;
+    --bg-display: #1F2937;
+    --green-text: #4adf86;
+    --green-buttons: #10B981;
+    --green-password: #55F991;
+    --accent-grey: #273549;
 
 }
-
-/* ===== TYPOGRAPHY ===== */
 
 #container{
     width: 450px;
-    background-color: #1F2937; 
+    background-color: var(--bg-display); 
     padding: 40px 40px;
 }
+
+/* ===== TYPOGRAPHY ===== */
 
 #heading{
     margin-bottom: 0;
@@ -29,7 +35,7 @@ body{
 #subheading{
     margin-top: 1px;
     margin-bottom: 1px;
-    color: #4adf86;
+    color: var(--green-text);
 }
 
 #supporting{
@@ -44,7 +50,7 @@ body{
     margin-top: 20px;
     margin-bottom: 10px;
     padding: 5px 10px;
-    background-color: #10B981;
+    background-color: var(--green-buttons);
     border: none;
     border-radius: 3px;
     color: white;    
@@ -62,18 +68,22 @@ body{
 /* ===== PASSWORD CONTAINERS ===== */
 
 #password-container{
-    display: flex;
+    /* display: flex; */
     justify-content: space-between;
     margin-top: 25px;
     border-top: 1px solid #b4b8bd;
 }
 
+@media screen {
+    
+}
+
 .password-display{
-    width: 211px;
-    height: 39px;
-    color: #55F991;
+    min-width: 211px;
+    min-height: 39px;
+    color: var(--green-password);
     border-radius: 5px;
-    background-color: #273549;
+    background-color: var(--accent-grey);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,16 +98,26 @@ body{
     right: 15px; */
     border: 1px solid white;
     padding: 1em;
-    background-color: white;
+    background-color: var(--accent-grey);
+    color: white;
+    line-height: 2;
+    backdrop-filter: blur();
 }
 
 input[type = number]{
-    width: 4em;
-   
+   width: 3em;
+   border: 1px solid white;
+   background-color: var(--accent-grey);
+   color: white;
+   border-radius: 5px;
 }
 
+.toggle-container{
+    display: flex;
+    align-items: center;
+}
 .toggle-input{
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 40px;
     width: var(--switch-width);
     height: var(--switch-height);
@@ -105,6 +125,7 @@ input[type = number]{
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     padding: .25em;
+    margin-left: 15px;
 }
 
 input[type = "checkbox"]{

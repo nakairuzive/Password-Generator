@@ -3,7 +3,7 @@ let password2El = document.querySelector("#password2");
 
 let btnSettingsEl = document.querySelector("#btn-settings");
 let settingLength = document.querySelector("#password-lenght");
-let passLen = settingLength.value;
+
 let settingSymbol = document.querySelector("#symbols");
 let settingNumber = document.querySelector("#numbers");
 let btnCloseEl = document.querySelector("#btn-close");
@@ -31,86 +31,114 @@ btnCloseEl.addEventListener("click", function(){
 })
 
 btnSettingsGenerateEl.addEventListener("click", function(){
-    if (passLen === true){
+    emptyMemory();
+    const passLen = Number(settingLength.value);
+    if(isNaN(passLen) || passLen < 10 || passLen > 30){
+        defaultPassword();
+        return;
+    }
+    else if(settingNumber.checked && settingSymbol.checked){
         securePassword(passLen);
+    }
+    else if(settingSymbol.checked){
+        letterSymbolPassword(passLen);
+    }
+    else if(settingNumber.checked){
+        letterNumberPassword(passLen);
+    }
+    else{
+        letterPassword(passLen);
     }
 })
 
 btnGenerateEl.addEventListener("click", function(){
-    securePassword();
+    defaultPassword();
 })
 
 btnNewEl.addEventListener("click", function(){
-    password1El.textContent = "";
-    password2El.textContent = "";
+    emptyMemory();
 })
 
+password1El.addEventListener("click", function(){
+    copyText();
+})
 
+password2El.addEventListener("click",function(){
+    copyText();
+})
+
+// FUNCTION TO CLEAR PREVIOUS PASSWORD
+function emptyMemory(){
+    if((password1El.textContent != "") && (password2El.textContent != "")){
+        password1El.textContent = "";
+        password2El.textContent = "";
+    }
+}
 
 // PASSWORD GENERATING FUNCTIONS
+function defaultPassword(){
+    emptyMemory();
+    for(let i = 0; i < 15 ; ++i){
+        let char = Math.floor(Math.random() * characters.length);
+        password1El.textContent += characters[char];
+    }
+    for(let j = 0; j < 15; ++j){
+        let char = Math.floor(Math.random() * characters.length);
+        password2El.textContent += characters[char];
+    }
+}
+
 function securePassword(len){
     for(let i = 0; i < len ; ++i){
-        let letter = Math.floor(Math.random() * characters.length);
-        password1El.textContent += characters[letter];
+        let char = Math.floor(Math.random() * characters.length);
+        password1El.textContent += characters[char];
     }
     for(let j = 0; j < len; ++j){
-        let letter = Math.floor(Math.random() * characters.length);
-        password2El.textContent += characters[letter];
+        let char = Math.floor(Math.random() * characters.length);
+        password2El.textContent += characters[char];
     }
 }
 
-function symbolsPassword(){
-    for(let i = 0; i < 15 ; ++i){
-        let sym = Math.floor(Math.random()*symbols.length);
-        password1El.textContent += symbols[sym];
-    }
-    for(let j = 0; j < 15 ; ++j){
-        let sym = Math.floor(Math.random()*symbols.length);
-        password2El.textContent += symbols[sym];
-    }
-}
-
-function numericPassword(){
-    for(let i = 0; i < 15; ++i){
-        let num = Math.floor(Math.random() * numbers.length);
-        password1El.textContent += numbers[num];
-    }
-     for(let j = 0; j < 15; ++j){
-        let num = Math.floor(Math.random() * numbers.length);
-        password2El.textContent += numbers[num];
-    }
-}
-
-function letterNumberPassword(){
-    for(let i = 0; i < 15; ++i){
+function letterNumberPassword(len){
+    emptyMemory();
+    for(let i = 0; i < len; ++i){
         let numChar = Math.floor(Math.random() * charNumber.length);
         password1El.textContent += charNumber[numChar];
     }
-     for(let j = 0; j < 15; ++j){
+     for(let j = 0; j < len; ++j){
         let numChar = Math.floor(Math.random() * charNumber.length);
         password2El.textContent += charNumber[numChar];
     }
 }
 
-function letterSymbolPassword(){
-    for(let i = 0; i < 15; ++i){
+function letterSymbolPassword(len){
+    emptyMemory();
+    for(let i = 0; i < len; ++i){
         let symChar = Math.floor(Math.random() * charSymbol.length);
         password1El.textContent += charSymbol[symChar];
     }
-     for(let j = 0; j < 15; ++j){
+     for(let j = 0; j < len; ++j){
         let symChar = Math.floor(Math.random() * charSymbol.length);
         password2El.textContent += charSymbol[symChar];
     }
 }
 
-function letterPassword(){
-    for(let i = 0; i < 15; ++i){
+function letterPassword(len){
+    for(let i = 0; i < len; ++i){
         let char = Math.floor(Math.random() * letters.length);
         password1El.textContent += letters[char]
     }
-    for(let j = 0; j < 15; ++j){
+    for(let j = 0; j < len; ++j){
         let char = Math.floor(Math.random() * letters.length);
         password2El.textContent += letters[char]
     }
 }
 
+function copyText(){
+    const text1 = document.querySelector(".copy-text").textContent;
+    navigator.clipboard.writeText(text1).then(()=>{
+        alert("Password Copied!");
+    }).catch(err =>{
+        alert("Could not copy text");
+    })
+}
