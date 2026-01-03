@@ -60,11 +60,11 @@ btnNewEl.addEventListener("click", function(){
 })
 
 password1El.addEventListener("click", function(){
-    copyText();
+    copyText1();
 })
 
 password2El.addEventListener("click",function(){
-    copyText();
+    copyText2();
 })
 
 // FUNCTION TO CLEAR PREVIOUS PASSWORD
@@ -134,9 +134,18 @@ function letterPassword(len){
     }
 }
 
-function copyText(){
-    const text1 = document.querySelector(".copy-text").textContent;
+function copyText1(){
+    const text1 = document.querySelector(".copy-text1").textContent;
     navigator.clipboard.writeText(text1).then(()=>{
+        alert("Password Copied!");
+    }).catch(err =>{
+        alert("Could not copy text");
+    })
+}
+
+function copyText2(){
+    const text2 = document.querySelector(".copy-text2").textContent;
+    navigator.clipboard.writeText(text2).then(()=>{
         alert("Password Copied!");
     }).catch(err =>{
         alert("Could not copy text");
