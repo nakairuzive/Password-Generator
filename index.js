@@ -23,8 +23,14 @@ const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","="
 
 
 btnSettingsEl.addEventListener("click", function(){
-    document.getElementById("settings-menu").style.display = "block";
+    document.querySelector("#button-container").style.marginBottom = "16px";
+    document.getElementById("settings-menu").style.display = "grid";
+    document.querySelector("").style.display = "grid";
 })
+
+if (btnGenerateEl) {
+  btnSettingsEl.style.display = 'block';
+}
 
 btnCloseEl.addEventListener("click", function(){
     document.getElementById("settings-menu").style.display = "none";

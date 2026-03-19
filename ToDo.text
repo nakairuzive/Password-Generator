@@ -1,2 +1,9 @@
 - Write Functionns for the settings filters
 - When the generate button is pressed
+
+
+===== NOTES =====
+18 March 2025
+- Created a branch feature/tailwind-css, this branch will be used to change the styling for vanilla css to tailwind css
+- Goal turn this into a pwa that supports offline operation
+

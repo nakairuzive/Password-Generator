@@ -3,21 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
         <title>Password Generator</title>
     </head>
 
-    <body>
-        <div id="container">
-           <div id="content">
-                <h1 id="heading">Generate a</h1>
-                <h1 id="subheading">random password</h1>
-                <p id="supporting">Never use an insecure password again.</p>
-                <button class="btn btn-settings" id="btn-settings">Settings</button>
-                <div class="form-popup" id="settings-menu">
-                        <label for="password-length"> Password length</label>
-                        <input type="number" id="password-lenght" min="10" max="25">
+    <body class="font-Arial w-screen h-screen flex justify-center items-center ">
+        <main class="px-10 flex flex-col border" " id="container">
+           
+                <section class="mt-10" id="content">
+                    <h1 class="text-4xl text font-bold" id="heading">Generate a</h1>
+                    <h1 class="text-4xl text font-bold" id="subheading">random password</h1>
+                    <p class="" id="supporting">Never use an insecure password again.</p>
+                </section>
+
+                <section class="flex gap-4 my-8" id="button-container">
+                    <button class="py-1 px-2 border rounded-sm btn btn-settings" id="btn-settings">Settings</button>
+                    <button class="py-1 px-2 border rounded-sm btn btn-passwords" id="btn-generate">Generate Passwords</button>
+                </section>
+
+                <form class="pt-4 px-4 mb-4 flex flex-col hidden gap-2 border form-popup" id="settings-menu">
+                        <section>
+                            <label for="password-length"> Password length</label>
+                            <input class="w-12 border rounded-md" type="number" id="password-lenght" min="10" max="25">
                         <br>
+                        </section>
                         <div class="toggle-container">
                             <label for="symbols">Symbols</label>
                             <label for="symbols" class="toggle-input">
@@ -32,17 +42,26 @@
                                 <div class="toggle-circle"></div>
                             </label>
                         </div>
-                        <button class="btn btn-red" id="btn-close">Close</button>
-                        <button class="btn btn-passwords" id="btn-settings-generate">Generate Passwords</button>
-                </div>
-                <button class="btn btn-passwords" id="btn-generate">Generate Passwords</button>
-                <div id="password-container">
-                    <p id="password1" class="password-display copy-text1" ></p> 
-                    <p id="password2" class="password-display copy-text2"></p>
-                </div>
-                <button class="btn btn-escape" id="btn-new">Clear</button>
-            </div>
-        </div>
+                        <section class="py-4 flex gap-2">
+                            <button class="bg-red-500 py-.5 px-1 border rounded-sm btn btn-red" id="btn-close">Close</button>
+                            <button class="py-.5 px-1 border rounded-sm btn btn-passwords" id="btn-settings-generate">Generate Passwords</button>
+                        </section>
+                </form>
+
+                <hr>
+                
+                <article class="w-[450px] h-[90px] mt-8 flex flex-col justify-between" id="password-container">
+                    <p class="text-center font-medium bg-gray-400 h-[39px] p-2 border-sm rounded-md password-display copy-text1" id="password1"></p> 
+                    <p class="text-center font-medium bg-gray-400 h-[39px] p-2 border-sm rounded-md password-display copy-text2" id="password2"></p>
+                </article>
+
+                <section>
+                    <button class="my-8 py-1 px-2 border rounded-sm btn btn-escape" id="btn-new">Clear</button>
+                </section>
+
+                
+            
+        </main>
         <script src="index.js"></script>
     </body>
 </html>
