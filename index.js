@@ -35,12 +35,12 @@ if (btnGenerateEl) {
 }
 
 btnCloseEl.addEventListener("click", function(){
-    document.querySelector("#button-container").style.marginBottom = "24px";
-    helpTextEl.style.margin = "8px auto 8px auto";
+    document.querySelector("#button-container").style.marginBottom = "8px";
+    helpTextEl.style.margin = "4px auto 4px auto";
     document.getElementById("settings-menu").style.display = "none";
     document.querySelector("#btn-generate").style.display = "block";
     helpTextEl.textContent = ""
-    document.getElementById("border-line").style.display = "block";
+    //document.getElementById("border-line").style.display = "block";
 })
 
 function settingsPassword(){
@@ -73,35 +73,35 @@ btnSettingsGenerateEl.addEventListener("click", function(){
     if(isNaN(passLen) || passLen < 10 || passLen > 30){
         document.querySelector("#settings-menu").style.marginBottom = "0px";
         helpTextEl.style.margin = "16px auto 16px auto";
-        document.getElementById("border-line").style.display = "none";
+        // document.getElementById("border-line").style.display = "none";
         helpTextEl.textContent = "Please Select Password Lenght!";
         return;
     }
     else if(settingNumber.checked && settingSymbol.checked){
         document.querySelector("#settings-menu").style.marginBottom = "0px";
         helpTextEl.style.margin = "16px auto 16px auto";
-        document.getElementById("border-line").style.display = "none";
+        // document.getElementById("border-line").style.display = "none";
         helpTextEl.textContent = "default password with letters, symbols and numbers"
         securePassword(passLen);
     }
     else if(settingSymbol.checked){
         document.querySelector("#settings-menu").style.marginBottom = "0px";
         helpTextEl.style.margin = "16px auto 16px auto";
-        document.getElementById("border-line").style.display = "none";
+        // document.getElementById("border-line").style.display = "none";
         helpTextEl.textContent = "default password with letters and symbols"
         letterSymbolPassword(passLen);
     }
     else if(settingNumber.checked){
         document.querySelector("#settings-menu").style.marginBottom = "0px";
         helpTextEl.style.margin = "16px auto 16px auto";
-        document.getElementById("border-line").style.display = "none";
+        // document.getElementById("border-line").style.display = "none";
         helpTextEl.textContent = "default password with letters and numbers"
         letterNumberPassword(passLen);
     }
     else{
         document.querySelector("#settings-menu").style.marginBottom = "0px";
         helpTextEl.style.margin = "16px auto 16px auto";
-        document.getElementById("border-line").style.display = "none";
+        // document.getElementById("border-line").style.display = "none";
         helpTextEl.textContent = "default password with letters only"
         letterPassword(passLen);
     }
@@ -112,12 +112,12 @@ btnGenerateEl.addEventListener("click", function(){
 })
 
 btnNewEl.addEventListener("click", function(){
-    document.querySelector("#button-container").style.marginBottom = "24px";
-    helpTextEl.style.margin = "8px auto 8px auto";
+     document.querySelector("#button-container").style.marginBottom = "8px";
+    helpTextEl.style.margin = "4px auto 4px auto";
     document.getElementById("settings-menu").style.display = "none";
     document.querySelector("#btn-generate").style.display = "block";
     helpTextEl.textContent = ""
-    document.getElementById("border-line").style.display = "block";
+    // document.getElementById("border-line").style.display = "block";
     emptyMemory();
 })
 
