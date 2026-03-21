@@ -26,10 +26,12 @@
                 --color-settings-btn: #64748B;
                 --color-password-border: #ADB5C0;
                 --color-output: #363f50;
+                --color-blue-outline: #375d86;
                 --color-btn-red: #ff0000;
                 --color-btn-clear: #cccfd4;
                 --color-btn-clear-text: #767b87;
                 --colur-hr-line: #b4b8bd;
+                --color-green-outline: #4ade80;
             }
             .toggle-input {
                 --switch-width: 1.5em;  
@@ -57,8 +59,8 @@
                 </section>
 
                 <section class="flex gap-4 mt-4 mb-[8px]" id="button-container">
-                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm btn btn-settings" id="btn-settings">Settings</button>
-                    <button class="bg-green-buttons text-white py-1 px-2 rounded-sm btn btn-passwords" id="btn-generate">Generate Passwords</button>
+                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-settings" id="btn-settings">Settings</button>
+                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-passwords" id="btn-generate">Generate Passwords</button>
                 </section>
 
                 <form class="text-white-text bg-accent-grey pt-4 px-4 mb-4 hidden border form-popup" id="settings-menu">
@@ -67,7 +69,7 @@
                             <label class="font-medium" for="password-length"> Password length</label>
                             <input class="text-green-password w-12 h-6 p-1 ml-3.5 border border-white rounded-md" type="number" id="password-lenght" min="10" max="25">
                             <section class="flex justify-end ml-auto items-end">
-                               <button class="bg-btn-clear text-white-text py-2 px-2 rounded-sm btn btn-red" id="btn-close" type="button"><img class="w-2" src="media/red-close-outline.svg" alt=""></button>
+                               <button class="bg-btn-clear text-white-text py-2 px-2 rounded-sm hover:cursor-pointer hover:outline-btn-red hover:outline hover:outline-offset btn btn-red" id="btn-close" type="button"><img class="w-2" src="media/red-close-outline.svg" alt=""></button>
                             </section>
                         <br>
                         </section>
@@ -90,7 +92,7 @@
                             </label>
                         </section>
                         <section class="py-4 flex gap-2">
-                            <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm btn btn-passwords" id="btn-settings-generate" type="button">Generate Passwords</button>
+                            <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline hover:outline-green-outline hover:outline-offset-2 btn btn-passwords" id="btn-settings-generate" type="button">Generate Passwords</button>
                         </section>
                 </form>
 
@@ -100,16 +102,16 @@
                 
                 <article class="w-[450px] flex flex-col justify-between" id="password-container">
                     <p class="text-white-text">Generated Password 1 </p>
-                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md password-display copy-text1" id="password1"></p> 
+                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text1" id="password1"></p> 
                 </article>
 
                 <article class="w-[450px] flex flex-col justify-between mt-2" id="password-container">
                     <p class="text-white-text">Generated Password 2</p>
-                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover password-display copy-text2" id="password2"></p>
+                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text2" id="password2"></p>
                 </article>
                 
                 <section class="flex justify-end">
-                    <button class="text-btn-clear-text bg-btn-clear mt-4 mb-10 py-1 px-2 flex gap-2 rounded-sm btn btn-escape" id="btn-new"><img class="w-3" src="media/grey-colse-outline.svg">Clear All</button>
+                    <button class="text-btn-clear-text bg-btn-clear mt-4 mb-10 py-1 px-2 flex gap-2 rounded-sm hover:outline-white hover:outline hover:outline-offset-2 btn btn-escape" id="btn-new"><img class="w-3" src="media/grey-colse-outline.svg">Clear All</button>
                 </section>
    
         </main>
