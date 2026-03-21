@@ -1,4 +1,6 @@
 #  Password Generator App
+[Version 2: New & Updated](https://nakairuzive.github.io/Password-Generator/)    
+
 If you remember using the internet in the 2000's and the early 2010's, you remember the struggle of having to scratch your brain to come up with 
 a strong password and then having to write it down on a Post-it that would eventually get lost. You would then have to request a password, and the 
 cycle repeats itself.
@@ -37,6 +39,7 @@ This project explores how you can create your own password generator.
 + The blocks where the passwords are displayed can be set to {display: flex} so that they can be placed side by side. When the passwords become too long, they display boxes that should stack on top of each other
 + Naming Conventions
 ##  Video 
+The original design
 ![Demo](media/PasswordGenerator.gif)
-![](https://github.com/Password-Generator/PasswordGenerator.gif)
+![Version 1](https://github.com/Password-Generator/PasswordGenerator.gif)
 
