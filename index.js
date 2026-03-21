@@ -13,6 +13,8 @@ let btnSettingsGenerateEl = document.querySelector("#btn-settings-generate");
 let btnGenerateEl = document.querySelector("#btn-generate");
 let btnNewEl = document.querySelector("#btn-new");
 
+let helpTextEl = document.querySelector("#text-explain");
+
 const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9","~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?",
 "/"];
 const letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"] ;
@@ -23,30 +25,84 @@ const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","="
 
 
 btnSettingsEl.addEventListener("click", function(){
-    document.getElementById("settings-menu").style.display = "block";
+    document.querySelector("#button-container").style.marginBottom = "16px";
+    document.getElementById("settings-menu").style.display = "grid";
+    document.querySelector("#btn-generate").style.display = "none";
 })
 
+if (btnGenerateEl) {
+  btnSettingsEl.style.display = 'block';
+}
+
 btnCloseEl.addEventListener("click", function(){
+    document.querySelector("#button-container").style.marginBottom = "8px";
+    helpTextEl.style.margin = "4px auto 4px auto";
     document.getElementById("settings-menu").style.display = "none";
+    document.querySelector("#btn-generate").style.display = "block";
+    helpTextEl.textContent = ""
+    //document.getElementById("border-line").style.display = "block";
 })
+
+function settingsPassword(){
+    if(btnSettingsGenerateEl){
+        emptyMemory();
+        const passLen = Number(settingLength.value);
+        if(isNaN(passLen) || passLen < 10 || passLen > 30){
+            defaultPassword();
+            return;
+        }
+        else if(settingNumber.checked && settingSymbol.checked){
+            securePassword(passLen);
+        }
+        else if(settingSymbol.checked){
+            letterSymbolPassword(passLen);
+        }
+        else if(settingNumber.checked){
+            letterNumberPassword(passLen);
+        }
+        else{
+            letterPassword(passLen);
+        }
+    }
+}
 
 btnSettingsGenerateEl.addEventListener("click", function(){
     emptyMemory();
     const passLen = Number(settingLength.value);
+    
     if(isNaN(passLen) || passLen < 10 || passLen > 30){
-        defaultPassword();
+        document.querySelector("#settings-menu").style.marginBottom = "0px";
+        helpTextEl.style.margin = "16px auto 16px auto";
+        // document.getElementById("border-line").style.display = "none";
+        helpTextEl.textContent = "Please Select Password Lenght!";
         return;
     }
     else if(settingNumber.checked && settingSymbol.checked){
+        document.querySelector("#settings-menu").style.marginBottom = "0px";
+        helpTextEl.style.margin = "16px auto 16px auto";
+        // document.getElementById("border-line").style.display = "none";
+        helpTextEl.textContent = "default password with letters, symbols and numbers"
         securePassword(passLen);
     }
     else if(settingSymbol.checked){
+        document.querySelector("#settings-menu").style.marginBottom = "0px";
+        helpTextEl.style.margin = "16px auto 16px auto";
+        // document.getElementById("border-line").style.display = "none";
+        helpTextEl.textContent = "default password with letters and symbols"
         letterSymbolPassword(passLen);
     }
     else if(settingNumber.checked){
+        document.querySelector("#settings-menu").style.marginBottom = "0px";
+        helpTextEl.style.margin = "16px auto 16px auto";
+        // document.getElementById("border-line").style.display = "none";
+        helpTextEl.textContent = "default password with letters and numbers"
         letterNumberPassword(passLen);
     }
     else{
+        document.querySelector("#settings-menu").style.marginBottom = "0px";
+        helpTextEl.style.margin = "16px auto 16px auto";
+        // document.getElementById("border-line").style.display = "none";
+        helpTextEl.textContent = "default password with letters only"
         letterPassword(passLen);
     }
 })
@@ -56,6 +112,12 @@ btnGenerateEl.addEventListener("click", function(){
 })
 
 btnNewEl.addEventListener("click", function(){
+     document.querySelector("#button-container").style.marginBottom = "8px";
+    helpTextEl.style.margin = "4px auto 4px auto";
+    document.getElementById("settings-menu").style.display = "none";
+    document.querySelector("#btn-generate").style.display = "block";
+    helpTextEl.textContent = ""
+    // document.getElementById("border-line").style.display = "block";
     emptyMemory();
 })
 

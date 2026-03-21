@@ -3,46 +3,118 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="tailwind.css"> -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <style type="text/tailwindcss">
+            @theme {
+                /* --color-bg-main: #1c1c1c;
+                --color-bg-display: #1F2937;
+                --color-green-text: #4adf86;
+                --color-green-buttons: #10B981;
+                --color-green-password: #55F991;
+                --color-settings-btn: #64748B;
+                --color-accent-grey: #273549;
+                --color-btn-red: #ff0000;
+                --color-btn-clear: #993333;
+                --colur-hr-line: #b4b8bd; */
+                --color-bg-main: #363e4e;
+                --color-bg-display: #111827;
+                --color-white-text: #F9FAFB;
+                --color-green-text: #4ADE80;
+                --color-green-buttons: #22C55E;
+                --color-green-password: #55F991;
+                --color-settings-btn: #64748B;
+                --color-password-border: #ADB5C0;
+                --color-output: #363f50;
+                --color-blue-outline: #375d86;
+                --color-btn-red: #ff0000;
+                --color-btn-clear: #cccfd4;
+                --color-btn-clear-text: #767b87;
+                --colur-hr-line: #b4b8bd;
+                --color-green-outline: #4ade80;
+            }
+            .toggle-input {
+                --switch-width: 1.5em;  
+                --switch-height: .5em;  
+            }
+
+            .toggle-circle {
+                transition: transform 0.2s ease;
+            }
+
+            input[type="checkbox"]:checked ~ .toggle-input .toggle-circle {
+                transform: translateX(calc(var(--switch-width) - var(--switch-height)));
+            }
+        </style>
         <title>Password Generator</title>
     </head>
 
-    <body>
-        <div id="container">
-           <div id="content">
-                <h1 id="heading">Generate a</h1>
-                <h1 id="subheading">random password</h1>
-                <p id="supporting">Never use an insecure password again.</p>
-                <button class="btn btn-settings" id="btn-settings">Settings</button>
-                <div class="form-popup" id="settings-menu">
-                        <label for="password-length"> Password length</label>
-                        <input type="number" id="password-lenght" min="10" max="25">
+    <body class="font-Arial bg-output w-screen h-screen flex justify-center items-center ">
+        <main class="bg-bg-display px-10 flex flex-col shadow-lg" " id="container">
+           
+                <section class="mt-10" id="content">
+                    <h1 class="text-white-text text-4xl text font-bold" id="heading">Generate a</h1>
+                    <h1 class="text-green-text text-4xl text font-bold" id="subheading">random password</h1>
+                    <p class="text-white my-1" id="supporting">Never use an insecure password again.</p>
+                </section>
+
+                <section class="flex gap-4 mt-4 mb-[8px]" id="button-container">
+                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-settings" id="btn-settings">Settings</button>
+                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-passwords" id="btn-generate">Generate Passwords</button>
+                </section>
+
+                <form class="text-white-text bg-accent-grey pt-4 px-4 mb-4 hidden border form-popup" id="settings-menu">
+                        
+                        <section class="flex items-center">
+                            <label class="font-medium" for="password-length"> Password length</label>
+                            <input class="text-green-password w-12 h-6 p-1 ml-3.5 border border-white rounded-md" type="number" id="password-lenght" min="10" max="25">
+                            <section class="flex justify-end ml-auto items-end">
+                               <button class="bg-btn-clear text-white-text py-2 px-2 rounded-sm hover:cursor-pointer hover:outline-btn-red hover:outline hover:outline-offset btn btn-red" id="btn-close" type="button"><img class="w-2" src="media/red-close-outline.svg" alt=""></button>
+                            </section>
                         <br>
-                        <div class="toggle-container">
-                            <label for="symbols">Symbols</label>
+                        </section>
+                        <section class="flex items-center gap-2 toggle-container">
+                            <label class="font-medium" for="symbols">Symbols</label>
                             <label for="symbols" class="toggle-input">
-                                <input type="checkbox" id="symbols" class="toggle-input">
+                                <!-- w-8 h-4 ml-3.5 grid grid-cols-2 items-center border rounded-full  -->
+                                <input type="checkbox" id="symbols" class="accent-green-password  toggle-input">
                                 <div class="toggle-circle"></div>
+                                <!--bg-green-700 w-3 h-3 rounded-full peer-checked:translate-x-[calc(var(--switch-width)-var(--switch-height))] transition-transform duration-300  -->
                             </label>
-                        </div>
-                        <div class="toggle-container">
-                            <label for="numbers">Numbers</label>
+                        </section>
+                        <section class="flex items-center gap-2 toggle-container">
+                            <label class="font-medium" for="numbers">Numbers</label>
                             <label for="numbers" class="toggle-input">
-                                <input type="checkbox" id="numbers" class="toggle-input">
+                                <!-- w-8 h-4 ml-3.5 grid grid-cols-2 items-center border rounded-full -->
+                                <input type="checkbox" id="numbers" class="accent-green-password toggle-input">
                                 <div class="toggle-circle"></div>
+                                <!--bg-green-700 w-3 h-3 rounded-full  peer-checked:translate-x-[calc(var(--switch-width)-var(--switch-height))] transition-transform duration-300  -->
                             </label>
-                        </div>
-                        <button class="btn btn-red" id="btn-close">Close</button>
-                        <button class="btn btn-passwords" id="btn-settings-generate">Generate Passwords</button>
-                </div>
-                <button class="btn btn-passwords" id="btn-generate">Generate Passwords</button>
-                <div id="password-container">
-                    <p id="password1" class="password-display copy-text1" ></p> 
-                    <p id="password2" class="password-display copy-text2"></p>
-                </div>
-                <button class="btn btn-escape" id="btn-new">Clear</button>
-            </div>
-        </div>
+                        </section>
+                        <section class="py-4 flex gap-2">
+                            <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline hover:outline-green-outline hover:outline-offset-2 btn btn-passwords" id="btn-settings-generate" type="button">Generate Passwords</button>
+                        </section>
+                </form>
+
+                <!-- <hr class="border-white" id="border-line"> -->
+
+                <p class="text-white-text text-xs italic mx-auto mt-2" id="text-explain"></p>                
+                
+                <article class="w-[450px] flex flex-col justify-between" id="password-container">
+                    <p class="text-white-text">Generated Password 1 </p>
+                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text1" id="password1"></p> 
+                </article>
+
+                <article class="w-[450px] flex flex-col justify-between mt-2" id="password-container">
+                    <p class="text-white-text">Generated Password 2</p>
+                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text2" id="password2"></p>
+                </article>
+                
+                <section class="flex justify-end">
+                    <button class="text-btn-clear-text bg-btn-clear mt-4 mb-10 py-1 px-2 flex gap-2 rounded-sm hover:outline-white hover:outline hover:outline-offset-2 btn btn-escape" id="btn-new"><img class="w-3" src="media/grey-colse-outline.svg">Clear All</button>
+                </section>
+   
+        </main>
         <script src="index.js"></script>
     </body>
 </html>
