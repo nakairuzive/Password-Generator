@@ -39,7 +39,10 @@ This project explores how you can create your own password generator.
 + The blocks where the passwords are displayed can be set to {display: flex} so that they can be placed side by side. When the passwords become too long, they display boxes that should stack on top of each other
 + Naming Conventions
 ##  Video 
-The original design
+### Latest design 
+![Demo]()
+### The original design
 ![Demo](media/PasswordGenerator.gif)
-![Version 1](https://github.com/Password-Generator/PasswordGenerator.gif)
+
+
 
