@@ -40,7 +40,7 @@ This project explores how you can create your own password generator.
 + Naming Conventions
 ##  Video 
 ### Latest design 
-![Demo]()
+![Demo](media/PasswordGeneratorVersion2.gif)
 ### The original design
 ![Demo](media/PasswordGenerator.gif)
 
