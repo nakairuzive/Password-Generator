@@ -50,17 +50,17 @@
     </head>
 
     <body class="font-Arial bg-output w-screen h-screen flex flex-col justify-center items-center">
-        <main class="bg-bg-display px-10 flex flex-col shadow-lg" " id="container">
+        <main class="bg-bg-display w-fit px-4 md:px-10 flex flex-col shadow-lg" " id="container">
            
                 <section class="mt-10" id="content">
-                    <h1 class="text-white-text text-4xl text font-bold" id="heading">Generate a</h1>
-                    <h1 class="text-green-text text-4xl text font-bold" id="subheading">random password</h1>
-                    <p class="text-white my-1" id="supporting">Never use an insecure password again.</p>
+                    <h1 class="text-white-text text-3xl md:text-4xl text font-bold" id="heading">Generate a</h1>
+                    <h1 class="text-green-text text-3xl md:text-4xl text font-bold" id="subheading">random password</h1>
+                    <p class="text-[14px] md:text-[16px] text-white my-1" id="supporting">Never use an insecure password again.</p>
                 </section>
 
-                <section class="flex gap-4 mt-4 mb-[8px]" id="button-container">
-                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-settings" id="btn-settings">Settings</button>
-                    <button class="bg-green-buttons text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-passwords" id="btn-generate">Generate Passwords</button>
+                <section class="flex gap-4 mt-4 mb-2" id="button-container">
+                    <button class="bg-green-buttons text-[14px] md:text-[16px] text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-settings" id="btn-settings">Settings</button>
+                    <button class="bg-green-buttons text-[14px] md:text-[16px] text-white-text py-1 px-2 rounded-sm hover:cursor-pointer hover:outline-green-outline hover:outline hover:outline-offset-2 btn btn-passwords" id="btn-generate">Generate Passwords</button>
                 </section>
 
                 <form class="text-white-text bg-accent-grey pt-4 px-4 mb-4 hidden border form-popup" id="settings-menu">
@@ -69,7 +69,7 @@
                             <label class="font-medium" for="password-length"> Password length</label>
                             <input class="text-green-password w-12 h-6 p-1 ml-3.5 border border-white rounded-md" type="number" id="password-lenght" min="10" max="25">
                             <section class="flex justify-end ml-auto items-end">
-                               <button class="bg-btn-clear text-white-text py-2 px-2 rounded-sm hover:cursor-pointer hover:outline-btn-red hover:outline hover:outline-offset btn btn-red" id="btn-close" type="button"><img class="w-2" src="media/red-close-outline.svg" alt=""></button>
+                               <button class="bg-btn-clear text-[14px] md:text-[16px] text-white-text py-2 px-2 rounded-sm hover:cursor-pointer hover:outline-btn-red hover:outline hover:outline-offset btn btn-red" id="btn-close" type="button"><img class="w-2" src="media/red-close-outline.svg" alt=""></button>
                             </section>
                         <br>
                         </section>
@@ -100,18 +100,18 @@
 
                 <p class="text-white-text text-xs italic mx-auto mt-2" id="text-explain"></p>                
                 
-                <article class="w-[450px] flex flex-col justify-between" id="password-container">
-                    <p class="text-white-text">Generated Password 1 </p>
-                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text1" id="password1"></p> 
+                <article class="md:w-112.5 flex flex-col justify-between" id="password-container">
+                    <p class="text-white-text text-[14px] md:text-[16px]">Generated Password 1 </p>
+                    <p class="text-center text-green-text font-medium bg-output h-9.75 p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text1" id="password1"></p> 
                 </article>
 
-                <article class="w-[450px] flex flex-col justify-between mt-2" id="password-container">
-                    <p class="text-white-text">Generated Password 2</p>
-                    <p class="text-center text-green-text font-medium bg-output h-[39px] p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text2" id="password2"></p>
+                <article class="md:w-112.5 flex flex-col justify-between mt-2" id="password-container">
+                    <p class="text-white-text text-[14px] md:text-[16px]">Generated Password 2</p>
+                    <p class="text-center text-green-text font-medium bg-output h-9.75 p-2 border border-password-border rounded-md hover:cursor-text hover:outline-blue-400 hover:outline focus:outline-offset-0 password-display copy-text2" id="password2"></p>
                 </article>
                 
                 <section class="flex justify-end">
-                    <button class="text-btn-clear-text bg-btn-clear mt-4 mb-10 py-1 px-2 flex gap-2 rounded-sm hover:outline-white hover:outline hover:outline-offset-2 btn btn-escape" id="btn-new"><img class="w-3" src="media/grey-colse-outline.svg">Clear All</button>
+                    <button class="text-[14px] md:text-[16px] text-btn-clear-text bg-btn-clear mt-4 mb-10 py-1 px-2 flex gap-2 rounded-sm hover:outline-white hover:outline hover:outline-offset-2 btn btn-escape" id="btn-new"><img class="w-3" src="media/grey-colse-outline.svg">Clear All</button>
                 </section>
    
         </main>
