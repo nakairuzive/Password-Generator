@@ -1,5 +1,5 @@
 #  Password Generator App
-[Version 2: New & Updated](https://nakairuzive.github.io/Password-Generator/)    
+**Link to site:** [Version 2: New & Updated](https://nakairuzive.github.io/Password-Generator/)    
 
 If you remember using the internet in the 2000's and the early 2010's, you remember the struggle of having to scratch your brain to come up with 
 a strong password and then having to write it down on a Post-it that would eventually get lost. You would then have to request a password, and the 
@@ -40,7 +40,7 @@ This project explores how you can create your own password generator.
 + Naming Conventions
 ##  Video 
 ### Latest design 
-![Demo]()
+![Demo](media/PasswordGeneratorVersion2.gif)
 ### The original design
 ![Demo](media/PasswordGenerator.gif)
 
